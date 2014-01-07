@@ -1,13 +1,20 @@
-%h3 Home HAML 2014
-%strong{:class => "code", :id => "message"} Hello, World!
-%strong.code#message2 Hello World 2!
-#content Hola Mundo
-%section.container
-	%p.intro
-	This is a text in a paragraph
-	%ul.mylist
-		%li#firstitem List item one
-		%li List item two
-		%li List item three
-	%p
-	This is a second paragraph
+%h3 Home HAML 2014, this is an h3
+%p.copy
+	%strong{:class => "code", :id => "message"} This is one paragraph class .code and ID#message and it is strong
+%p.copy
+	%strong.code#message2 Second paragraph. This is a second class .code and ID#message2
+#content This is a div with ID #content
+%img.puppy(src="http://www.insertpuppy.com/400-300")
+	
+%section.aside
+	%p.copy
+	This is a text in a paragraph is a child of section class .container
+
+%ul.mylist
+	%li#first List item one
+	%li List item two
+	%li List item three
+	%li List item four
+	%li#last List item five
+%p.copy
+This is a second paragraph
