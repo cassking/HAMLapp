@@ -21,42 +21,7 @@ img {
   float: right;
   background: #fff;
 }
-.container {
-  border: 1px solid #fff;
-}
-#content {
-  float: left;
 
-}
-.intro, .puppy {
-  float: left;
-  background: #fff;
-  border-bottom: 1px solid red;
-}
-.mylist {
-  width: 190px;
-  list-style: none;
-  border: 1px solid blue;
-  float: left;
-}
-#first, #last {
-  color: white;
-  border: 1px solid red;
-}
-#image {
-  float: left;
-}
-.copy {
-  float: left;
-}
-
-#navigation{
-  float: right;
-  width: 150px;
-}
-#intro{
-  width: 450px;
-}
 
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
@@ -85,8 +50,12 @@ a {
   background: transparent url(../images/header-corners.png) no-repeat bottom left;
 }
 
-
-
+#image {
+  float: left;
+}
+#list{
+  list-style: none;
+}
 #content{
   background-color: #fff;
   padding: 0 15px 10px 15px;
@@ -102,13 +71,13 @@ a {
       a {
         display: inline-block;
         float: left;
-        margin-right: 5px;
+        margin-right: 10px
       }
   }
 }
 
 
-h2 {
+h1, h2, h3 {
   border-bottom:2px solid #015287;
   color: #D15600;
   padding-top: 10px;
