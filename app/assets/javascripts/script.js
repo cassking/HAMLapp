@@ -67,6 +67,40 @@ $(document).ready(function(){
 	});
 
 });
+//TASK 9, replace two separate buttons wiht one, use toggle
+// $(document).ready(function(){
+// 	$('#toggleButton').click(function(){
+// 		if ($('.disclaimer').is(':visible'))
+// 		{
+// 			$('.disclaimer').hide();
+// 		}
+// 		else 
+// 			{ 
+// 			$('.disclaimer').show();
+// 		}
+// 	});
+
+// });
+//TASK 10 implement toggle with simple toggle() function instead of show() and hide()
+ $(document).ready(function(){
+ 	$('#toggleButton').click(function(){
+ 		$('.disclaimer').toggle();
+
+ 		if ($('.disclaimer').is(':visible')) {
+ 			$(this).val('Hide Disclaimer');
+ 		}
+ 		else {
+ 			$(this).val('Show Disclaimer');
+ 			
+ 		}
+ 	});
+ });
+
+ 
+
+
+
+
 
 
 
