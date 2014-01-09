@@ -13,15 +13,6 @@ img {
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
-.code {
-  color: red;
-}
-.aside {
-  width: 125px;
-  float: right;
-  background: #fff;
-}
-
 
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
@@ -119,6 +110,19 @@ th {
 
 td {
   padding: 6px;
+}
+
+.zebra {
+  background-color: #dddddd;
+  color: #666666;
+}
+.code {
+  color: red;
+}
+.aside {
+  width: 125px;
+  float: right;
+  background: #fff;
 }
 
 
