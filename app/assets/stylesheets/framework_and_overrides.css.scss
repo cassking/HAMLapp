@@ -26,7 +26,7 @@ img {
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
   color: #3E3E3E;
-  background: #94C5EB url(../images/background-grad.png) repeat-x;
+  background: #94C5EB;
   font-size: 12px;
 }
 
@@ -47,7 +47,7 @@ a {
 #header{
   height: 60px;
   color: #172322;
-  background: transparent url(../images/header-corners.png) no-repeat bottom left;
+  background: transparent;
 }
 
 #image {
@@ -56,6 +56,18 @@ a {
 #list{
   list-style: none;
 }
+ul{  
+   background-color:#ccc;  
+    display:block;  
+}  
+  
+li {  
+    color:white;  
+    display:inline-block;  
+    padding:5px 10px 0 10px;  
+    margin-right:2px;  
+    background-color: #D15600;  
+}
 #content{
   background-color: #fff;
   padding: 0 15px 10px 15px;
@@ -63,9 +75,13 @@ a {
 } 
 
 #footer {
-  background-color: #fff;
-  padding:15px;
-  clear: both;
+ padding:15px;
+  clear: both; 
+    background-color:#ade;  
+    font-size:75%;  
+    font-family:sans-serif;  
+    color:#333;  
+    border-top:solid 1px #69a; 
    .footerlinks {
     list-style: none;
       a {
