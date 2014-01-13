@@ -95,9 +95,42 @@ $(document).ready(function(){
  		}
  	});
  });
+//TASK 11 adding elements to the DOM using jQuery
+// $(document).ready(function(){
+// 	$('<p> This is a new dynamically generated paragraph</p>').addClass('new');
+// 	alert('created')
+// });
+//TASK 12 add elements to the DOM using jQuery
+$(document).ready(function(){
+	$('#insertButton').click(function(){
+		$('<strong> END</strong>').insertAfter('.disclaimer');
+		$('<strong> START</strong>').insertBefore('.disclaimer');
+		$('<strong>THIS IS INSERTED INSIDE</strong>').prependTo('.disclaimer');
+		$('<strong>THIS IS INSERTED INSIDE</strong>').appendTo('.disclaimer');
+	});
+});
 
- 
+$(document).ready(function(){
+	$('#thisTest').click(function(){
+		$(this).hide();
 
+	});
+
+
+});
+
+//TASK 13 Add button with Jquery only for users with javascript and give it toggle functionality
+//<input type="button" value="toggle" id="toggleButton2">
+
+$(document).ready(function(){
+	$('<input type="button" value="toggle2" id="toggleButton2">').insertAfter('.h2');
+	$("#toggleButton2").click(function(){
+		$('.disclaimer').toggle();
+	});
+
+});
+
+//TASK 14
 
 
 
