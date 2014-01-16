@@ -1,11 +1,11 @@
 //comment here
 // TASK 1
 //Testing a selection to be sure it exists on page
-$(document).ready(function() {
+$(document).ready(function(){
 	console.log($('#celebs tr').length + 'elements!');	
 });
 
-$(document).ready(function() {
+$(document).ready(function(){
  console.log($('#celebs tbody tr:even').length + 'even rows in the table');
 });
 
@@ -130,10 +130,125 @@ $(document).ready(function(){
 
 });
 
-//TASK 14
+//TASK 14 simplify syntax when adding elements to DOM, decrease repetition
+//Practice the syntax below
+
+$(document).ready(function(){
+	$('<div>', {
+		id: 'specialButton',
+		text: 'button  to click',
+		width: '150px',
+		height: '30px',
+		click: function(){ 
+			alert('this is an alert');
+		}
+	}).insertBefore('.disclaimer')
+});
+//TASK 15  REMOVING existing elements
+// $(document).ready(function(){
+// 	$('.no-script').remove();
+// 	$('#celebs tr').remove(':contains("Singer")');
+
+
+// });
+
+// TASK 16  MODIFYING CONTENT using .html and .text,
+// $(document).ready(function(){
+
+// 	$('p').text('<strong>I have replaced this dynamically</strong>');
+// 	$('h2').html('<strong>I have replaced this dynamically</strong>');
+// 	alert($('p:last').text());
+
+// });
+
+//TASK 17 using fadeIn and fadeOut
+// $(document).ready(function(){
+
+// 	$('#fadeButton').click(function(){
+// 		$('.disclaimer').slideToggle(1000);
+// 		$('.no-script').toggle(1000);
+
+
+// 	});
+
+// });
+
+//TASK 18 ADD  a callback function to the fadeOut function
+//the callback happens after the fading action is finished, in this case the alert
+
+// $(document).ready(function(){
+
+// 	$('#fadeButton').click(function(){
+// 		$('.h2').slideUp(1000);
+// 			alert('this fades!');
+// 	});
+
+// });
+// $(document).ready(function(){
+// 	$('#fadeButton2').click(function(){
+// 		$('.disclaimer').slideDown();
+// 			// alert('this is fading');
+
+// });
+//TASK 19 a callback function to the fadeOut function
+//the callback happens after the fading action is finished
+//in this case, hide the button once the disclaimer is hidden
+$(document).ready(function(){
+	
+	$('.disclaimer').slideToggle('slow', function(){
+		$('#fadeButton2').hide();
+
+	});
+
+});
+
+//TASK 20 using mouseout and mouseover and hover effects
+//first attempt
+
+// $(document).ready (function(){
+// 	$('#celebs tr').mouseover(function(){
+// // alert('go');
+// 		$('tr:even').addClass('zebrahover');
+
+// 	});
+// 	$('#celebs tr').mouseout(function(){
+// // alert('go');
+// 		$('tr').removeClass('zebrahover');
+
+// 	});
+
+// });
+
+// TASK 20 USING MOUSEOUT AND MOUSEOVER, ATTEMPT TWO
+
+$(document).ready(function(){
+
+	$('#celebs tr').mouseover(function(){
+		$(this).addClass('zebrahover');
+	});
+	$('#celebs tr').mouseout(function(){
+		$(this).removeClass('zebrahover');
+	});
 
 
 
+});
+
+
+
+///SPLIT STRING AFTER @
+// var string = "a";
+// var newstring = string.replace(/\a/g, "xxxxxxxxxx");
+// $(document).ready(function(){
+
+// 	if ($('td:contains("a")').length > 0 ){
+// 		//$('.colemail').fadeOut(1000);
+// 		//$('body').html().replace(string, newstring);
+
+// $(newstring).appendTo('.info');
+// alert(newstring);
+// 	}
+// });
 
 
 

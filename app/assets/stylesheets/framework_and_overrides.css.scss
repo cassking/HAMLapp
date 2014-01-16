@@ -13,11 +13,14 @@ img {
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
+$bgcolor: #94C5EB;
+$basetextcolor: #3E3E3E ;
+$linkcolor: #3687AF;
 
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
-  color: #3E3E3E;
-  background: #94C5EB;
+  color: $basetextcolor;
+  background: $bgcolor;
   font-size: 12px;
 }
 
@@ -26,7 +29,7 @@ p {
 }
 
 a {
-  color: #3687AF;
+  color: $linkcolor;
 }
 
 #container{
@@ -69,7 +72,7 @@ li {
 #footer {
   padding:15px;
   clear: both; 
-  background-color:#94C5EB;  
+  background-color:$bgcolor;  
   font-size:75%;  
   font-family:sans-serif;  
   color: #333;
@@ -94,7 +97,7 @@ h1, h2, h3 {
   margin-top: 0;
 }
 strong {
-  color:red;
+  color: red;
 }
 
 table {
@@ -118,9 +121,12 @@ td {
   padding: 6px;
 }
 
-.zebra {
+.zebra{
   background-color: #dddddd;
   color: #666666;
+}
+.zebrahover {
+  background-color: #fffacd;
 }
 .code {
   color: red;
@@ -130,7 +136,10 @@ td {
   float: right;
   background: #fff;
 }
-
+.no-script {
+  text-transform: uppercase;
+  color: red;
+}
 
 // to make views framework-neutral
 .column {
