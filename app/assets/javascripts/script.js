@@ -219,22 +219,39 @@ $(document).ready(function(){
 
 // });
 
-// TASK 20 USING MOUSEOUT AND MOUSEOVER, ATTEMPT TWO
+// TASK 20 USING MOUSEOUT AND MOUSEOVER, ATTEMPT TWO, the long way
+
+// $(document).ready(function(){
+
+// 	$('#celebs tr').mouseover(function(){
+// 		$(this).addClass('zebrahover');
+// 	});
+// 	$('#celebs tr').mouseout(function(){
+// 		$(this).removeClass('zebrahover');
+// 	});
+
+
+
+// });
+
+//TASK 20 USING A SHORTER WAY  USING THE HOVER WHCIH COMBINES BOTH MOUSEOVER/MOUSEOUT
+//also practice replacing string
 
 $(document).ready(function(){
 
-	$('#celebs tr').mouseover(function(){
+	$('#celebs tr').hover(function(){
 		$(this).addClass('zebrahover');
-	});
-	$('#celebs tr').mouseout(function(){
+	},
+	function() {
 		$(this).removeClass('zebrahover');
-	});
+		//alert($('td.colemail').text());
+		$(this).text($(this).text().replace('@', ' @ '));
+		//alert('g0');
+	}
 
-
+	);
 
 });
-
-
 
 ///SPLIT STRING AFTER @
 // var string = "a";
