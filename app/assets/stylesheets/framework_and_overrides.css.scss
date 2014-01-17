@@ -13,9 +13,9 @@ img {
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
-$bgcolor: #94C5EB;
-$basetextcolor: #3E3E3E ;
-$linkcolor: #3687AF;
+  $bgcolor: #94C5EB;
+  $basetextcolor: #3E3E3E ;
+  $linkcolor: #3687AF;
 
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
@@ -139,6 +139,12 @@ td {
 .no-script {
   text-transform: uppercase;
   color: red;
+}
+.spoiler {
+  color: red;
+}
+.show {
+  display: inline;
 }
 
 // to make views framework-neutral

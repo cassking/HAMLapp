@@ -237,22 +237,22 @@ $(document).ready(function(){
 //TASK 20 USING A SHORTER WAY  USING THE HOVER WHCIH COMBINES BOTH MOUSEOVER/MOUSEOUT
 //also practice replacing string
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-	$('#celebs tr').hover(function(){
-		$(this).addClass('zebrahover');
-	},
-	function() {
-		$(this).removeClass('zebrahover');
-		//alert($('td.colemail').text());
-		$(this).text($(this).text().replace('@', ' @ '));
-		//alert('g0');
-	}
+// 	$('#celebs tr').hover(function(){
+// 		$(this).addClass('zebrahover');
+// 	},
+// 	function() {
+// 		$(this).removeClass('zebrahover');
+// 			//alert($('td.colemail').text());
+// 			//$(this).text($(this).text().replace('@', ' @ ')); THIS REPLACES STRING
+// 			//alert('g0');
+// 	}
 
-	);
+// 	);
 
-});
-
+// });
+/////
 ///SPLIT STRING AFTER @
 // var string = "a";
 // var newstring = string.replace(/\a/g, "xxxxxxxxxx");
@@ -266,12 +266,53 @@ $(document).ready(function(){
 // alert(newstring);
 // 	}
 // });
+//TASK 20 PRACTICE 
+$(document).ready(function(){
+	$('.disclaimer').click(function() {
+		$(this).text($(this).text().replace('Disclaimer!', 'WARNING:'));
+		// alert('boo');
+	});
+});
+
+//TASK 20 using TOGGLECLASS instead of two separate actions
+
+$(document).ready(function(){
+	 $('#celebs tr').hover(function(){
+		$(this).toggleClass('zebrahover');
+	 });
+
+});
+
+//TASK 21 COMBINING MUTLIPLE  ACTIONS TO HIDE THE SPOILER AND REAVEAL ONLY WHEN CLICKING
+//FIRST ATTEMPT TO DO IT ON MY OWN
+// $(document).ready(function(){
+
+// 	$('.spoiler').hide();		
+// 	$('<ul  style = "list-style:none; 
+// 		display: block; width: 150px; 
+// 		text-align: center;padding: 10px; background-color: 
+// 		red; color: white; border-radius: 4px;">
+// 		<li style="border: none;">REVEAL ANSWER</li>
+// 		</ul>').insertBefore('.spoiler');
+
+// 	$('ul').click(function(){
+// 		$('.spoiler').addClass('show');
+// 		$(this).fadeOut();
+// 	});
 
 
 
+// });
 
+//TASK 21 COMBINING ACTIONS USING THE NEW next ACTION, next SIBLING IN DOM
+$(document).ready(function(){
+$('.spoiler').hide();		
+$('<ul class="revealer" style = "list-style:none; display: block; width: 150px; text-align: center;padding: 10px; background-color: red; color: white; border-radius: 4px;"><li style="border: none;">REVEAL ANSWER</li></ul>').insertBefore('.spoiler');
+$('.revealer').click(function(){
+	$(this).fadeOut();
+	$(this).next().show();
 
+});
 
-
-
+});
 
