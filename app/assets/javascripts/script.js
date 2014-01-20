@@ -328,10 +328,10 @@ $(document).ready(function(){
 
 
 // 	});
-//insertAfter to use the PREV
+////TASK 21 REVIEW AFTER WEEKEND. insertAfter to use the PREV
 $(document).ready(function(){
 	$('.spoiler').hide();
-	$('<ul style ="background-color: blue; border-radius: 4px; color: white; padding: 5px;" class="revealer"><li>Show Spoiler</li></ul>').insertAfter('.spoiler');
+	$('<ul style ="background-color: blue; border-radius: 4px; color: white; padding: 5px; width: 125px" class="revealer"><li style="border: none;">Show Spoiler</li></ul>').insertAfter('.spoiler');
 	// $('#news p').click(function(){
 	$('.revealer').click(function(){
 		$(this).prev().show();//show next item in DOM, in this case the span
@@ -344,8 +344,66 @@ $(document).ready(function(){
 
 });
 
+//TASK 23 INTRO TO THE animate ACTION
+//small intro to how it works
+// $(document).ready(function(){
+// 	$('p').animate({
+// 		padding: '200px',
+// 		fontSize: ' 30px'
 
 
+// 	}, 2000);//2 seconds, 2,000 milliseconds
+
+
+// });
+$(document).ready(function(){
+
+
+	$('#navigation li').hover(function(){
+		$(this).animate({
+			paddingLeft: '+=20px'
+		}, 1000);
+
+
+	},
+	function(){
+		$(this).animate( {
+			paddingLeft: '-=20px'
+		});
+
+	});
+
+});
+ $(document).ready(function(){
+
+ 	$('#intro').hover(function(){
+ 		
+ 		$(this).animate({
+ 			paddingLeft: '+=20px',
+ 			height: 'hide',
+ 			opacity: 'hide'
+ 				}, 'fast');
+ 	}, function(){
+ 			 		$(this).animate({
+ 			 		paddingLeft: '-=20px',
+ 			 		height: 'show',
+ 			 		opacity: 'show'
+ 			 		}, 'fast');
+ 		}
+ 		);
+
+ });
+//JUST PRACTICING SYNTAX
+// $(document).ready(function(){
+// 	$("#myDiv").hover(function(){
+// 	$(this).animate({my properties, here}, timeinterval);
+// 	},
+// 	function() {
+// 	$(this).animate({my properties, here},timeinterval);
+
+// 	});
+
+// });
 
 
 
