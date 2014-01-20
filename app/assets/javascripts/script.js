@@ -404,9 +404,17 @@ $(document).ready(function(){
 // 	});
 
 // });
+//TASK 24 DOWNLOAD COLOR ANIMATE PLUGIN 
 
+$(document).ready(function(){
 
+ 	$('#news').hover(function(){
+ 		
+ 		$(this).animate({
+ 			backgroundColor: '#ff3f5f'
+ 				}, 'slow');
 
+ });
 
-
+ });
 
