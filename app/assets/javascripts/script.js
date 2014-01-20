@@ -305,14 +305,50 @@ $(document).ready(function(){
 // });
 
 //TASK 21 COMBINING ACTIONS USING THE NEW next ACTION, next SIBLING IN DOM
+// $(document).ready(function(){
+// $('.spoiler').hide();		
+// $('<ul class="revealer" style = "list-style:none; display: block; width: 150px; text-align: center;padding: 10px; background-color: red; color: white; border-radius: 4px;"><li style="border: none;">REVEAL ANSWER</li></ul>').insertBefore('.spoiler');
+// $('.revealer').click(function(){
+// 	$(this).fadeOut();
+// 	$(this).next().show();
+
+// });
+
+// });
+
+//TASK 21 REVIEW AFTER WEEKEND
+//insertBefore
+// $(document).ready(function(){
+// 	$('.spoiler').hide();
+// 	$('<ul style ="background-color: blue; border-radius: 4px; color: white; padding: 5px;" class="revealer"><li>Show Spoiler</li></ul>').insertBefore('.spoiler');
+// 	// $('#news p').click(function(){
+// 	$('.revealer').click(function(){
+// 		$(this).next().show();//show next item in DOM, in this case the span
+// 			$(this).fadeOut();
+
+
+// 	});
+//insertAfter to use the PREV
 $(document).ready(function(){
-$('.spoiler').hide();		
-$('<ul class="revealer" style = "list-style:none; display: block; width: 150px; text-align: center;padding: 10px; background-color: red; color: white; border-radius: 4px;"><li style="border: none;">REVEAL ANSWER</li></ul>').insertBefore('.spoiler');
-$('.revealer').click(function(){
-	$(this).fadeOut();
-	$(this).next().show();
+	$('.spoiler').hide();
+	$('<ul style ="background-color: blue; border-radius: 4px; color: white; padding: 5px;" class="revealer"><li>Show Spoiler</li></ul>').insertAfter('.spoiler');
+	// $('#news p').click(function(){
+	$('.revealer').click(function(){
+		$(this).prev().show();//show next item in DOM, in this case the span
+			$(this).fadeOut();
+
+
+	});
+
+
 
 });
 
-});
+
+
+
+
+
+
+
 

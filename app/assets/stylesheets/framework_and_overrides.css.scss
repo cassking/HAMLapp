@@ -32,13 +32,13 @@ a {
   color: $linkcolor;
 }
 
-#container{
+#container {
   margin:0 auto;
   text-align: left;
   width: 650px;
 }
 
-#header{
+#header {
   height: 60px;
   color: #172322;
   background: transparent;
@@ -47,23 +47,24 @@ a {
 #image {
   float: left;
 }
-#list{
+#list {
   list-style: none;
 }
-ul{  
-   background-color:#ccc;  
-    display:block;  
+ul {  
+   background-color: #ccc;  
+  display: block; 
+  list-style: none; 
 }  
   
 li {  
-    color:white;  
-    display:inline-block;  
-    padding:5px 10px 0 10px;  
-    margin-right:2px;  
+    color: white;  
+    display: inline-block;  
+    padding: 5px 10px 0 10px;  
+    margin-right: 2px;  
     border-right: 1px solid  #f8f8f8
  
 }
-#content{
+#content {
   background-color: #fff;
   padding: 0 15px 10px 15px;
 
