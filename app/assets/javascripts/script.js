@@ -411,10 +411,92 @@ $(document).ready(function(){
  	$('#news').hover(function(){
  		
  		$(this).animate({
- 			backgroundColor: '#ff3f5f'
- 				}, 'slow');
+ 			backgroundColor: '#ff9f5f'
+ 				}, '4000');
 
  });
 
  });
+//TASK 25 THE easing ACTION
+
+$(document).ready(function(){
+
+	$('.info').hover(function(){
+
+		$(this).animate({'height' : '+200px'}, 2000, 'easeOutElastic');
+
+	});
+
+});
+
+//ANIMATE TO CREATE PANES
+
+$(document).ready(function(){
+	$('#bio > div').hide();
+	$('#bio > div:first').show();
+	
+	$('#bio > h3').click(function(){
+
+		$(this).next().animate({ 'height': 'toggle'}, 2000, 'easeOutBounce');
+
+	});
+
+});
+
+///CHAINING
+// $(document).ready(function(){
+
+
+// 	$('#intro').next()
+// 		.hide()
+// 		.slideDown('slow')
+// 		.delay(2000)
+// 		.fadeOut();
+
+// });
+
+//ANIMATED NAVIGATION, WE ADD A DIV THEN ANIMATE IT
+$(document).ready(function(){
+
+	$('<div id="navigation_blob"></div>').css({height: $('#navigation li:first a').height() + 10})
+		.appendTo('#navigation');//create the div
+
+	//now write the function that works on hovering over the li
+
+	$('#navigation a').hover(function(){
+
+		$(this).mouseover(function(){
+			$('#navigation_blob').animate({width: $(this).width()+ 10, left: $(this).position().left, easing: 'easeOutBounce' }, 20);
+		}),
+		$(this).mouseout(function(){
+			$('#navigation_blob').animate({width: $(this).width()- 10, left: $('#navigation a:first').position().left, easing: 'easeOutBounce' }, 20);
+
+
+
+		});
+
+	});
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

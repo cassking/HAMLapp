@@ -43,7 +43,47 @@ a {
   color: #172322;
   background: transparent;
 }
+#bio {
+  margin-bottom: 10px;
+}
 
+#bio h3 {
+  margin:0;
+  padding:5px 0 5px 10px;
+  background-color:#94C5EB;
+  border-bottom:1px solid #fff;
+  color: #00314F;
+  font-weight:normal;
+}
+
+#bio div {
+  height:120px;
+  background-color: #F4F4EE;
+  border-bottom:1px solid #fff;
+  position: relative;
+}
+
+#bio img {
+  margin:10px;
+  background-color: #F4F4EE;
+}
+
+#bio p {
+  position: absolute;
+  left: 120px;
+  top: 10px;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+#navigation_blob {
+  top: 150px;
+  left: 120px;
+  height:30px;
+  opacity: 0.70;
+  background-color: #c0ffee;
+  position: absolute;
+  z-index: 100;
+}
 #image {
   float: left;
 }
