@@ -651,19 +651,60 @@ $(document).ready(function(){
 	});
 
 });
-//TASK 31 SCROLL EVENT
+//TASK 31 SCROLL EVENT, trigger something when scroll happens
 
 $(document).ready(function(){
 
-
 	$('#news_two').scroll(function(){
 
-
+		$('<p class="scrolled"> you scrolled</p>').appendTo('.heading');
 
 	});
 
+});
+
+//TASK 32, MAKE THE NAVIGATION BE A FLOATING NAV
+
+$(document).ready(function(){
+	//JUST TESTING IT OUT
+	// $(window).scroll(function(){
+	// 	$('#navigation').css('top', $(document).scrollTop());
+	// });
+//TASK 33 IMPLEMENT SCROLL
+
+// set up the variables
+	var $window = $(window),
+		$navigation = $('#navigation');
+
+//.offset() Get the current coordinates of 
+//the first element in the set of matched elements, relative to the document.
+//The .offset() method allows us to retrieve the current 
+//position of an element relative to the document. 
+//Contrast this with .position(), which retrieves the 
+//current position relative to the offset parent.
+		$window.scroll(function(){
+
+			if (!$navigation.hasClass('fixed') && ($window.scrollTop() > $navigation.offset().top))
+			{
+
+				$navigation.addClass('fixed').data('top', $navigation.offset().top);
+				//alert('fixed added');
+
+			}
+			else if($navigation.hasClass('fixed') && ($window.scrollTop() < $navigation.data('top')))
+			{
+
+				$(navigation).removeClass('fixed');
+				//alert('fixed removed');
+			}
+
+		});
+
 
 });
+
+
+
 
 
 

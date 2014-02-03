@@ -3,7 +3,7 @@
 %h1 JQuery HAML
 #container
 	#content
-		%h2 localhost: H2
+		
 		#navigation
 			%ul
 				%li#home
@@ -14,7 +14,7 @@
 					%a{:href => "#"}About Us
 				%li#gifts
 					%a{:href => "#"}Gift Ideas
-
+		%h2 localhost: H2
 		%p#intro
 			Welcome to <strong>StarTrackr!</strong> the planet's premier celebrity tracking and monitoring service. Need to know where in the world the best bands, musicians or producers are within 2.2 square meters? You've come to the right place. We have a very special special on B-grade celebs this week, so hurry in!    
 		
@@ -22,17 +22,18 @@
 			%h2 Sliding Panes
 			%h3 Beau Dandy
 			%div
-				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				= link_to image_tag("http://placekitten.com/g/100/100")  ,"http://www.google.com"
+				
 				%p Content about Beau Dandy
 			%h3 Johnny Stardust
 			%div
-				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				= link_to image_tag("http://placekitten.com/g/100/100")  ,"http://www.google.com"
 				%p Content about Johnny Stardust
 
 
 			%h3 Glendatronix
 			%div
-				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				= link_to image_tag("http://placekitten.com/g/100/100")  ,"http://www.google.com"
 				%p Content about Glendatronix
 	
 
@@ -45,9 +46,9 @@
 				localhost:3000 Who lost their recording contract today? 
 				<span class="spoiler">The Zaxntines!</span></p>
 		#news_two
-			%h2 H2 #news_two
+			%h2 H2 #news_two 
 			%p
-				(#news_two)LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.  LOTS OF MORE INFORMATION HERE.
+				(#news_two testing scroll)LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.  LOTS OF MORE INFORMATION HERE.
 			
 			%p
 				localhost:3000 Who lost their recording contract today? 
