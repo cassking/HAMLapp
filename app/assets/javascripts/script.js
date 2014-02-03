@@ -110,14 +110,14 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	$('#thisTest').click(function(){
-		$(this).hide();
+// $(document).ready(function(){
+// 	$('#thisTest').click(function(){
+// 		$(this).hide();
 
-	});
+// 	});
 
 
-});
+// });
 
 //TASK 13 Add button with Jquery only for users with javascript and give it toggle functionality
 //<input type="button" value="toggle" id="toggleButton2">
@@ -374,25 +374,27 @@ $(document).ready(function(){
 	});
 
 });
- $(document).ready(function(){
 
- 	$('#intro').hover(function(){
+//MORE PRACTICE WITH HOVER AND CHANGING PROPERTIES
+ // $(document).ready(function(){
+
+ // 	$('#intro').hover(function(){
  		
- 		$(this).animate({
- 			paddingLeft: '+=20px',
- 			height: 'hide',
- 			opacity: 'hide'
- 				}, 'fast');
- 	}, function(){
- 			 		$(this).animate({
- 			 		paddingLeft: '-=20px',
- 			 		height: 'show',
- 			 		opacity: 'show'
- 			 		}, 'fast');
- 		}
- 		);
+ // 		$(this).animate({
+ // 			paddingLeft: '+=20px',
+ // 			height: 'hide',
+ // 			opacity: 'hide'
+ // 				}, 'fast');
+ // 	}, function(){
+ // 			 		$(this).animate({
+ // 			 		paddingLeft: '-=20px',
+ // 			 		height: 'show',
+ // 			 		opacity: 'show'
+ // 			 		}, 'fast');
+ // 		}
+ // 		);
 
- });
+ // });
 //JUST PRACTICING SYNTAX
 // $(document).ready(function(){
 // 	$("#myDiv").hover(function(){
@@ -405,16 +407,127 @@ $(document).ready(function(){
 
 // });
 //TASK 24 DOWNLOAD COLOR ANIMATE PLUGIN 
+//**TROUBLESHOOT THIS, NOT WORKING 
 
 $(document).ready(function(){
-
- 	$('#news').hover(function(){
- 		
+ 	$('#news').click(function(){
  		$(this).animate({
- 			backgroundColor: '#ff3f5f'
+ 			'color': '#036'
  				}, 'slow');
 
  });
 
  });
+//TASK 25 USING animate AND easing TARGETTING FIRST PARAGRAPH
+
+$(document).ready(function(){
+
+ $('p.localhost').hover(function(){
+	 $(this).animate( {
+	 		'padding-top': '+=320px'}, 20, 'swing');
+
+	 }, function(){
+	 	$(this).animate({
+	 		'padding-top' : '-=320px'}, 20, 'swing');
+
+	 });
+		
+});
+
+//TASK 26 REVIEW  AFTER A FEW DAYS OFF VACATION
+
+
+$(document).ready(function(){
+	$('#intro').mouseover(function(){
+		$(this).animate({'padding-bottom': '-10px'  }, 2000);
+
+	}),
+	$(this).mouseout(function(){
+		$(this).animate({ 'margin-bottom' : '+90px'  }, 7000);
+
+	});
+
+});
+
+//TASK 27 HIDING AND SHOWING PANES
+ $(document).ready(function(){
+
+ 	$('#bio > div').hide();
+ 	$('#bio  > div:first').show();
+
+	 	$('#bio > h3').hover(function(){
+
+	 		$(this).next().animate({'height': 'toggle'}, 'slow' );
+
+	 	});
+
+
+ });
+
+
+ 
+	
+//TASK 28 CHAINING EVENTS; creating objects and animating them
+
+$(document).ready(function(){
+
+
+	//need to create the object
+	$('<div id=navigation_blob> </div>').appendTo('#navigation ul li a');
+	//position it relative to parent
+	// see http://api.jqueryui.com/position/ for all options
+
+
+	//now write the function that works on hovering over the li
+	$('#navigation a').hover(function(){
+
+		$('#navigation ul li a').mouseover(function(){
+			
+			//$('#navigation_blob').animate({'height': '+=120px'}, 'fast');
+			$('#navigation_blob').animate({width: $(this).width() + 20, left: $(this).position().left }, 'fast');
+			
+		});
+
+		$('#navigation ul li  a').mouseout(function(){
+
+			//$('#navigation_blob').animate({'height': '-=120px'}, 'fast');
+
+				$('#navigation_blob').animate({width: $(this).width() + 20, left: $(this).position().left}, 'fast');
+			
+		});
+
+
+	});
+
+
+});
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

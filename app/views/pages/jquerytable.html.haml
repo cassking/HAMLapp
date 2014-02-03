@@ -1,9 +1,9 @@
 - content_for :title do
 	Form
-%h3 JQUERY table, practice
+%h3 JQuery HAML
 #container
 	#content
-		%h2 Welcome!
+		%h2 localhost: H2
 		#navigation
 			%ul
 				%li 
@@ -18,72 +18,88 @@
 		%p#intro
 			Welcome to <strong>StarTrackr!</strong> the planet's premier celebrity tracking and monitoring service. Need to know where in the world the best bands, musicians or producers are within 2.2 square meters? You've come to the right place. We have a very special special on B-grade celebs this week, so hurry in!    
 
+		%section#bio
+			%h2 Sliding Panes
+			%h3 Beau Dandy
+			%div
+				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				%p Content about Beau Dandy
+			%h3 Johnny Stardust
+			%div
+				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				%p Content about Johnny Stardust
+
+			%h3 Glendatronix
+			%div
+				<img src="../../images/beau_100.jpg" width="100" height="100" alt="Beau Dandy" />
+				%p Content about Glendatronix
+	
 
 		#news
-			%h2 Latest News
-			%p
-				Which member of the seminal calypso/lectro band <em>C&amp;C Music Sweatshop</em> was spotted last night at <em>Dirt</em>, the trendy New York restaurant that serves only food caught and retrieved by the chef's own hands?<span class="spoiler">Yes! It's the ever-effervescent, <em>Glendatronix</em>!</span>
+			%h2 H2 #LOCALHOST localhost:3000
+			%p.localhost
+				localhost:3000 Which member of the seminal calypso/lectro band <em>C&amp;C Music Sweatshop</em> was spotted last night at <em>Dirt</em>, the trendy New York restaurant that serves only food caught and retrieved by the chef's own hands?<span class="spoiler">Yes! It's the ever-effervescent, <em>Glendatronix</em>!</span>
 			
 			%p
-				Who lost their recording contract today? 
+				localhost:3000 Who lost their recording contract today? 
 				<span class="spoiler">The Zaxntines!</span></p>
 		     
 		%div
-			%h2.heading Our Celebrities 
+			%h2.heading Our Content 
 			%p.info
-			We have an ever changing roster of newly chipped celebrities. But it can take as little as a week for the little critters to realise they've been tagged - so you have to be fast! 
+				localhost:3000 We have an ever changing roster of newly chipped celebrities. But it can take as little as a week for the little critters to realise they've been tagged - so you have to be fast!  LOTS OF MORE INFORMATION HERE.
+	
+		%table.data#celebs
+			%thead
+				%tr
+					%th ID
+					%th Name
+					%th Occupation
+					%th Approx. Location
+					%th Price
 
-			%table.data#celebs
-				%thead
+				%tbody
 					%tr
-						%th ID
-						%th Name
-						%th Occupation
-						%th Approx. Location
-						%th Price
-
-					%tbody
-						%tr
-							%td 203A
-							%td Johny Stardust (<a href="bio.pdf">bio</a>)
-							%td Front-man
-							%td Los Angeles
-							%td $39.95
-				
-						%tr
-							%td 141B
-							%td Beau Dandy (<a href="img.jpg">pic</a>,<a href="bio.pdf">bio</a>)
-							%td Singer
-							%td New York
-							%td $39.95
+						%td 203A
+						%td Johny Stardust (<a href="bio.pdf">bio</a>)
+						%td Front-man
+						%td Los Angeles
+						%td $39.95
+			
+					%tr
+						%td 141B
+						%td Beau Dandy (<a href="img.jpg">pic</a>,<a href="bio.pdf">bio</a>)
+						%td Singer
+						%td New York
+						%td $39.95
+					
+					%tr
+						%td.colemail 2031 <a mailto:"adafdadfafdafdadsfadfadfadf@madfadfadfa.com">adafdadfafdafdadsfadfadfadf@madfadfadfa.com</a>
+						%td Mo' Fat (<a href="img.jpg">pic</a>)
+						%td Producer
+						%td New York
+						%td $19.95
 						
-						%tr
-							%td.colemail 2031 <a mailto:"adafdadfafdafdadsfadfadfadf@madfadfadfa.com">adafdadfafdafdadsfadfadfadf@madfadfadfa.com</a>
-							%td Mo' Fat (<a href="img.jpg">pic</a>)
-							%td Producer
-							%td New York
-							%td $19.95
-							
-						%tr
-							%td 007F
-							%td Kellie Kelly (<a href="bio.pdf">bio</a>,<a href="w.doc">press</a>)
-							%td Singer
-							%td Omaha
-							%td $11.95
-						
-						%tr
-							%td 8A05
-							%td Darth Fader (<a href="img.jpg">pic</a>)
-							%td DJ
-							%td London
-							%td $19.95
-						 
-						%tr
-							%td 6636
-							%td Glendatronix  (<a href="bio.pdf">bio</a>,<a href="w.doc">press</a>)
-							%td Keytarist
-							%td London
-							%td $39.95
+					%tr
+						%td 007F
+						%td Kellie Kelly (<a href="bio.pdf">bio</a>,<a href="w.doc">press</a>)
+						%td Singer
+						%td Omaha
+						%td $11.95
+					
+					%tr
+						%td 8A05
+						%td Darth Fader (<a href="img.jpg">pic</a>)
+						%td DJ
+						%td London
+						%td $19.95
+					 
+					%tr
+						%td 6636
+						%td Glendatronix  (<a href="bio.pdf">bio</a>,<a href="w.doc">press</a>)
+						%td Keytarist
+						%td London
+						%td $39.95
 			
 		#comment
 			%h2 Leave a comment 
