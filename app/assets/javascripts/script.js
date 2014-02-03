@@ -410,30 +410,22 @@ $(document).ready(function(){
 //**TROUBLESHOOT THIS, NOT WORKING 
 
 $(document).ready(function(){
- 	$('#news').click(function(){
- 		$(this).animate({
- 
- 			'color': '#036'
- 				}, 'slow');
- 
- 			backgroundColor: '#ff9f5f'
- 				}, '4000');
- 
+ 	$('p.localhost').click(function(){
+ 		$(this).animate({backgroundColor: '#ff9f5f'});
+	});
 
  });
-
- 
 //TASK 25 USING animate AND easing TARGETTING FIRST PARAGRAPH
 
 $(document).ready(function(){
 
  $('p.localhost').hover(function(){
 	 $(this).animate( {
-	 		'padding-top': '+=320px'}, 20, 'swing');
+	 		'padding-top': '+=20px'}, 20, 'swing');
 
 	 }, function(){
 	 	$(this).animate({
-	 		'padding-top' : '-=320px'}, 20, 'swing');
+	 		'padding-top' : '-=20px'}, 20, 'swing');
 
 	 });
 		
@@ -499,47 +491,17 @@ $(document).ready(function(){
 
  
 	
-//TASK 28 CHAINING EVENTS; creating objects and animating them
-
-$(document).ready(function(){
-
-
-	//need to create the object
-	$('<div id=navigation_blob> </div>').appendTo('#navigation ul li a');
-	//position it relative to parent
-	// see http://api.jqueryui.com/position/ for all options
-
-
-	//now write the function that works on hovering over the li
-	$('#navigation a').hover(function(){
-
-			$('#navigation  a').mouseover(function(){
-				
-				//$('#navigation_blob').animate({'height': '+=120px'}, 'fast');
-				$('#navigation_blob').animate({width: $(this).width() + 20, left: $(this).position().left }, 'fast');
-				
-			});
-
-			$('#navigation  a').mouseout(function(){
-
-				//$('#navigation_blob').animate({'height': '-=120px'}, 'fast');
-
-					$('#navigation_blob').animate({width: $(this).width() + 20, left: $(this).position().left}, 'fast');
-				
-			});
-
-		});
-	});
 
 ///CHAINING
+
 // $(document).ready(function(){
 
+// 	$('.heading').hover(function(){
 
-// 	$('#intro').next()
-// 		.hide()
-// 		.slideDown('slow')
-// 		.delay(2000)
-// 		.fadeOut();
+// 		$(this).next().hide().slideDown('slow').delay(2000).fadeOut();
+
+// 	});
+
 
 // });
 
@@ -563,17 +525,145 @@ $(document).ready(function(){
 
 // 		});
 
-// >>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
 // 	});
 
 
 // });
 
+//TASK 28 CHAINING EVENTS; creating objects and animating them
+
+$(document).ready(function(){
+
+
+	//need to create the object
+	$('<div id=navigation_blob> </div>').appendTo('#navigation ul li a');
+	//position it relative to parent
+	// see http://api.jqueryui.com/position/ for all options
+
+
+	//now write the function that works on hovering over the li
+	$('#navigation a').hover(function(){
+
+			$('#navigation  a').mouseover(function(){
+				//$('#navigation_blob').animate({'height': '+=120px'}, 'fast');
+				$('#navigation_blob').animate(
+					{width: $(this).width() + 20, height: $(this).height + 20, left: $(this).position().left }, 'slow');
+				
+			});
+			//this is the first version, solo attempt
+			// $('#navigation li').animate({
+			// 	height: $(this).height() + 50
+			// });
+			$('#navigation li').hover(function(){
+
+				$(this).stop(true).animate({height: $(this).height() + 60}, {duration: 500, easing: 'easeOutBounce'});
+
+
+			});
+
+			$('#navigation  a').mouseout(function(){
+
+				//$('#navigation_blob').animate({'height': '-=120px'}, 'fast');
+
+					$('#navigation_blob')
+					.animate({width: $(this).width() + 20, left: $(this).position().left}, 'slow')
+					.animate({
+						left: $('#navigation a:first').position().left
+					});
+
+				$('#navigation li').hover(function(){
+
+				$(this).stop(true).animate({height: '20px'},{duration: 500, easing: 'easeOutCirc'});
+
+
+			});
+
+				
+			});
+			// $('#navigation li').animate({
+			// 	height: $(this).height()
+			// });
+
+		});
+	});
+////TASK 29 practicing animate with various position parameters
+
+$(document).ready(function(){
+
+	$('.heading').click(function(){
+//click on the heading and make the next element move to top of page
+		$(this).next().position({ 
+			'my' : 'right-top',
+			'at' : 'left-bottom',
+			'of' : $('#navigation')
+
+		});
+
+	});
+
+});
+
+//practice what was just reviewed
+
+
+$(document).ready(function(){
+
+
+	$('.info_three').hide();
+//what i want to happen on mouseover
+	$('.info_two').mouseover(function(){
+		$('.info_three').show();
+		$('.info_three').hover(function(){
+			
+			$(this).animate({
+				height: '20px',
+				width: '30px',
+				backgroundColor: '#036'
+			});
+
+		});
+
+});
+
+//what i want to happen on mouseout
+	$('.info_two').mouseout(function(){
+		$('.info_three').hover(function(){
+
+			$(this).animate({
+				height: '100px',
+				width: '300px',
+				backgroundColor: '#fff'
+			});
+
+		});
+
+	});
+
+});
+
+//TOUR OF UI JQIUERY EFFECTS
+////TASK 30 -TEST- TAKE FIRST PARAGRAPH, SHAKE IT,  HIGHLIGHT IT AND EXPLODE IT
+
+$(document).ready(function(){
+	$('p:first').hover(function(){
+ 		$(this).effect('shake', {}).effect('highlight', {}).effect('explode', {});
+
+	});
+
+});
+//TASK 31 SCROLL EVENT
+
+$(document).ready(function(){
+
+
+	$('#news_two').scroll(function(){
 
 
 
+	});
 
 
+});
 
 
 

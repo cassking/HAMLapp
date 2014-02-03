@@ -75,8 +75,15 @@ a {
   margin: 0 10px 0 0;
   padding: 0;
 }
+
+#news_two {
+  height: 100px;
+  width: 300px;
+  border: 1px solid red;
+  overflow: scroll;
+}
 #navigation_blob {
-  top: 150px;
+  top: 0px;
   left: 120px;
 
   height: 30px;
@@ -85,14 +92,59 @@ a {
   position: absolute;
   z-index: 1;
 
+}
+#navigation {
+  position:absolute;
+  width: inherit;
+  top: 100px; 
+  left: 50px;
+  margin: 0;
+}
 
+#navigation li {
+  height:30px;
+  float:left;
+  list-style-type: none;
+  width:70px;
+  padding:3px;
+  border-right:1px solid #3687AF;
+  background-color: #015287;
+  background-repeat: no-repeat;
+  background-position: center 30px;
+}
 
+#navigation ul {
+  padding: 0;
+  margin: 0;
+}
+
+#navigation li a {
+  color: #FFFFFF;
+}
+
+#navigation li#home {
+ background-image: url("http://localhost:3000/assets/home_icon.png");
+ z-index: 5000;
+}
+#navigation li#about {
+  background-image: url("http://localhost:3000/assets/home_icon.png");
+}
+#navigation li#buy {
+  background-image: url("http://localhost:3000/assets/home_icon.png");
+}
+#navigation li#gifts {
+  background-image: url("http://localhost:3000/assets/home_icon.png");
 }
 #image {
   float: left;
 }
 #list {
   list-style: none;
+}
+
+.info_three {
+ background-image: url("http://localhost:3000/assets/home_icon.png");
+
 }
 ul {  
    background-color: #ccc;  
