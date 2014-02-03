@@ -412,12 +412,18 @@ $(document).ready(function(){
 $(document).ready(function(){
  	$('#news').click(function(){
  		$(this).animate({
+<<<<<<< HEAD
  			'color': '#036'
  				}, 'slow');
+=======
+ 			backgroundColor: '#ff9f5f'
+ 				}, '4000');
+>>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
 
  });
 
  });
+<<<<<<< HEAD
 //TASK 25 USING animate AND easing TARGETTING FIRST PARAGRAPH
 
 $(document).ready(function(){
@@ -444,11 +450,35 @@ $(document).ready(function(){
 	}),
 	$(this).mouseout(function(){
 		$(this).animate({ 'margin-bottom' : '+90px'  }, 7000);
+=======
+//TASK 25 THE easing ACTION
+
+$(document).ready(function(){
+
+	$('.info').hover(function(){
+
+		$(this).animate({'height' : '+200px'}, 2000, 'easeOutElastic');
 
 	});
 
 });
 
+//ANIMATE TO CREATE PANES
+
+$(document).ready(function(){
+	$('#bio > div').hide();
+	$('#bio > div:first').show();
+	
+	$('#bio > h3').click(function(){
+
+		$(this).next().animate({ 'height': 'toggle'}, 2000, 'easeOutBounce');
+>>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
+
+	});
+
+});
+
+<<<<<<< HEAD
 //TASK 27 HIDING AND SHOWING PANES
  $(document).ready(function(){
 
@@ -497,10 +527,45 @@ $(document).ready(function(){
 		});
 
 
+=======
+///CHAINING
+// $(document).ready(function(){
+
+
+// 	$('#intro').next()
+// 		.hide()
+// 		.slideDown('slow')
+// 		.delay(2000)
+// 		.fadeOut();
+
+// });
+
+//ANIMATED NAVIGATION, WE ADD A DIV THEN ANIMATE IT
+$(document).ready(function(){
+
+	$('<div id="navigation_blob"></div>').css({height: $('#navigation li:first a').height() + 10})
+		.appendTo('#navigation');//create the div
+
+	//now write the function that works on hovering over the li
+
+	$('#navigation a').hover(function(){
+
+		$(this).mouseover(function(){
+			$('#navigation_blob').animate({width: $(this).width()+ 10, left: $(this).position().left, easing: 'easeOutBounce' }, 20);
+		}),
+		$(this).mouseout(function(){
+			$('#navigation_blob').animate({width: $(this).width()- 10, left: $('#navigation a:first').position().left, easing: 'easeOutBounce' }, 20);
+
+
+
+		});
+
+>>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
 	});
 
 
 });
+<<<<<<< HEAD
 	
 
 
@@ -510,6 +575,8 @@ $(document).ready(function(){
 
 
 
+=======
+>>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
 
 
 

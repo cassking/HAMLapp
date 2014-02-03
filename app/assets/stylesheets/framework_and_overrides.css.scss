@@ -78,11 +78,19 @@ a {
 #navigation_blob {
   top: 150px;
   left: 120px;
+<<<<<<< HEAD
   height: 30px;
   opacity: 0.70;
   background-color: #c0ffee;
   position: absolute;
   z-index: 1;
+=======
+  height:30px;
+  opacity: 0.70;
+  background-color: #c0ffee;
+  position: absolute;
+  z-index: 100;
+>>>>>>> 2697a8eccac81fab05e416e7a5ac84851c53233f
 }
 #image {
   float: left;
