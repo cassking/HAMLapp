@@ -1,0 +1,17 @@
+
+body  #container  {
+  width: 1200px;
+}
+
+body #container   p {
+  width: 850px;
+}
+
+body #header {
+  background-image: url("http://localhost:3000/assets/header-corners-wide.png");
+}
+
+body #celebs table {
+  width: 850px;
+  margin-left: 5px;
+}

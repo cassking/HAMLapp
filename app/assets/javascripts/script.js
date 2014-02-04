@@ -656,8 +656,8 @@ $(document).ready(function(){
 $(document).ready(function(){
 
 	$('#news_two').scroll(function(){
-
-		$('<p class="scrolled"> you scrolled</p>').appendTo('.heading');
+//disable for now
+		//$('<p class="scrolled"> you scrolled</p>').appendTo('.heading');
 
 	});
 
@@ -776,6 +776,51 @@ $(document).ready(function(){
  $('#news_two').jScrollPane ({ verticalGutter: 20   }   );
 
 });
+//GATHERING INFO ABOUT USER INITIATED WINDOW RESIZING
+
+
+
+
+$(document).ready(function(){
+	$(window).resize(function(){
+
+			//alert('you resized');
+
+	});
+
+});
+
+// CREATING A CSS STYLE SWITCHER THAT APPENDS THE wide.css FILE TO THE HEAD OF DOCUMENT
+
+//first, CREATE A FUNCTION TO TOGGLE upon RESIZE event trigger
+	$(document).ready(function(){
+		styleSheetToggle();
+		$(window).resize(styleSheetToggle());
+
+	});
+function styleSheetToggle() {
+	if ( $(window).width() < 500 ) 
+	   {
+	   	//$('<p>hello</p>').appendTo('#news');
+	 
+	  	alert('less than 500');
+	}
+	 //this not working
+	else ()
+		{
+			alert('more than 500');
+		}
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
