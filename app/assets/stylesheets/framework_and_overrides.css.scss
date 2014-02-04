@@ -31,7 +31,9 @@ p {
 a {
   color: $linkcolor;
 }
-
+#content {
+  height: 24000px;
+}
 #container {
   margin:0 auto;
   text-align: left;
@@ -94,10 +96,30 @@ a {
 
 }
 #navigation {
+width: 100px;
+float: right;
   position: relative;
-  width: inherit;
+  
+} 
+#navigation.fixed {
+      position: fixed;
+      left: 50%;
+      margin-left: 160px;
+      top: 0;
+  }
+ /* narrow the content to make room for floating nav */
 
-  margin: 0;
+p {
+    width: 400px;
+}
+
+h2 {
+    width: 400px;
+}
+
+#celebs table {
+    width: 400px;
+    margin-left: 0;
 }
 
 #navigation li {
@@ -140,7 +162,9 @@ a {
 #list {
   list-style: none;
 }
-
+.scrolled {
+    background-color: red;
+}
 .info_three {
  background-image: url("http://localhost:3000/assets/home_icon.png");
 

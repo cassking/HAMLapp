@@ -683,12 +683,13 @@ $(document).ready(function(){
 //Contrast this with .position(), which retrieves the 
 //current position relative to the offset parent.
 		$window.scroll(function(){
-
+			//$navigation.css('top', $(document).scrollTop());
+			// if navigation does  not have class of 'fixed' and...
 			if (!$navigation.hasClass('fixed') && ($window.scrollTop() > $navigation.offset().top))
 			{
-
+					//'data' records the elements intial top property , needed when scrolling back up
 				$navigation.addClass('fixed').data('top', $navigation.offset().top);
-				//alert('fixed added');
+				alert('fixed added');
 
 			}
 			else if($navigation.hasClass('fixed') && ($window.scrollTop() < $navigation.data('top')))
