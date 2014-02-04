@@ -98,7 +98,8 @@ a {
 #navigation {
 width: 100px;
 float: right;
-  position: relative;
+position: relative;
+z-index: 5000;
   
 } 
 #navigation.fixed {

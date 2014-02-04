@@ -665,59 +665,117 @@ $(document).ready(function(){
 
 //TASK 32, MAKE THE NAVIGATION BE A FLOATING NAV
 
+// $(document).ready(function(){
+// 	//JUST TESTING IT OUT
+// 	// $(window).scroll(function(){
+// 	// 	$('#navigation').css('top', $(document).scrollTop());
+// 	// });
+// //TASK 33 IMPLEMENT SCROLL
+
+// // set up the variables
+// 	var $window = $(window),
+// 		$navigation = $('#navigation');
+
+// //.offset() Get the current coordinates of 
+// //the first element in the set of matched elements, relative to the document.
+// //The .offset() method allows us to retrieve the current 
+// //position of an element relative to the document. 
+// //Contrast this with .position(), which retrieves the 
+// //current position relative to the offset parent.
+// 		$window.scroll(function(){
+// 			//$navigation.css('top', $(document).scrollTop());
+// 			// if navigation does  not have class of 'fixed' and...
+// 			if (!$navigation.hasClass('fixed') && ($window.scrollTop() > $navigation.offset().top))
+// 			{
+// 					//'data' records the elements intial top property , needed when scrolling back up
+// 				$navigation.addClass('fixed').data('top', $navigation.offset().top);
+				 
+
+// 			}
+// 			else if($navigation.hasClass('fixed') && ($window.scrollTop() < $navigation.data('top')))
+// 			{
+
+// 				$(navigation).removeClass('fixed');
+				 
+// 			}
+
+// 		});
+
+
+// });
+//understanding Offset()
+
+// $(document).ready(function(){
+// 	var y = $('#celebs').offset();
+// 	alert('top ' + y.top + 'left ' + y.left);
+
+// });
+// practice setting class based on offset() and scrollTop
 $(document).ready(function(){
-	//JUST TESTING IT OUT
-	// $(window).scroll(function(){
-	// 	$('#navigation').css('top', $(document).scrollTop());
-	// });
-//TASK 33 IMPLEMENT SCROLL
+//need to bind this to the scroll event
+// data method   records what our element’s initial top property is.
+	$(window).scroll(function(){
 
-// set up the variables
-	var $window = $(window),
-		$navigation = $('#navigation');
+		if  ((!$('#navigation').hasClass('fixed')) && ( ($(window).scrollTop()) > ($('#navigation').offset().top)   ))
 
-//.offset() Get the current coordinates of 
-//the first element in the set of matched elements, relative to the document.
-//The .offset() method allows us to retrieve the current 
-//position of an element relative to the document. 
-//Contrast this with .position(), which retrieves the 
-//current position relative to the offset parent.
-		$window.scroll(function(){
-			//$navigation.css('top', $(document).scrollTop());
-			// if navigation does  not have class of 'fixed' and...
-			if (!$navigation.hasClass('fixed') && ($window.scrollTop() > $navigation.offset().top))
-			{
-					//'data' records the elements intial top property , needed when scrolling back up
-				$navigation.addClass('fixed').data('top', $navigation.offset().top);
-				alert('fixed added');
+		 	{
+				$('#navigation').addClass('fixed').data('top', $('#navigation').offset().top);
 
 			}
-			else if($navigation.hasClass('fixed') && ($window.scrollTop() < $navigation.data('top')))
-			{
 
-				$(navigation).removeClass('fixed');
-				//alert('fixed removed');
-			}
+		else if   
+			  (($('#navigation').hasClass('fixed'))  && ( ($(window).scrollTop()) < ($('#navigation').data('top'))) )   
 
-		});
+		  		{
+					$('#navigation').removeClass('fixed');
+
+				}
+		
+
+	});
+});
+
+//SCROLLING THE DOCUMENT USING ANCHOR TAGS
+// reading specs i did it this way....
+
+$(document).ready(function(){
+
+ $('<a href=" # ">Click # Me To Scroll to Top ONE</a>').appendTo('#footer');
+
+	  $('a[href=#]').click(function(){
+
+	  	$(window).scrollTop(10);
+
+
+	  });
 
 
 });
 
 
+//SCROLLING THE DOCUMENT USING ANCHOR TAGS
+// following book it is done thusly... using the ScrollTo plugin
+
+$(document).ready(function(){
+
+ $('<a href=" # ">Click # Me To Scroll to Top TWO</a>').appendTo('#footer');
+
+	  $('a[href=#]').click(function(event){
+
+	  	$.scrollTo(0, 'slow');//syntax specific to plugin use $.scrollTo()
+	  	event.preventDefault();
 
 
+	  });
 
 
+});
 
+//use of ScrollPane plugin
+$(document).ready(function(){
+ $('#news_two').jScrollPane ({ verticalGutter: 20   }   );
 
-
-
-
-
-
-
-
+});
 
 
 
