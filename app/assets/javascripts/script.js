@@ -792,29 +792,75 @@ $(document).ready(function(){
 
 // CREATING A CSS STYLE SWITCHER THAT APPENDS THE wide.css FILE TO THE HEAD OF DOCUMENT
 
-//first, CREATE A FUNCTION TO TOGGLE upon RESIZE event trigger
-	$(document).ready(function(){
-		styleSheetToggle();
-		$(window).resize(styleSheetToggle());
+//CREATE A FUNCTION TO create and event upon RESIZE event trigger
+//my solo attempt
+	// $(document).ready(function(){
+	// 	$(window).resize(function(){
+	// 		if ( $(window).width() < 500 ) 
+	// 	   	{
+	// 	   	$('<p class="foo">hello</p>').appendTo('#news');
+	// 	  	//alert('less than 500');
+	// 		}
+	// 		else if ( $(window).width() > 500 ) 
+	// 		{
+	// 			//alert('more than 500');
+	// 		$('.foo').remove();
+	// 		}
 
-	});
-function styleSheetToggle() {
-	if ( $(window).width() < 500 ) 
-	   {
-	   	//$('<p>hello</p>').appendTo('#news');
-	 
-	  	alert('less than 500');
-	}
-	 //this not working
-	else ()
+	// 	});
+
+	// });
+
+	///THIS IS HOW TO DO IT AS PER BOOK
+
+// 	$(document).ready(function(){
+
+// 		styleSheetToggle();
+// 		$(window).resize(styleSheetToggle);
+		
+
+// 	});
+
+// function styleSheetToggle() {
+
+// if ( $(window).width() < 500 ) 
+// 		   	{
+// 		   	$('<p class="foo">hello</p>').appendTo('#news');
+// 		  	//alert('less than 500');
+// 			}
+// 			else if ( $(window).width() > 500 ) 
+// 			{
+// 				//alert('more than 500');
+// 			$('.foo').remove();
+// 			}
+// }
+//LETS TRY  THIS AGAIN ON MY OWN
+$(document).ready(function(){
+
+//WE CALL THE FUNCTION WHEN THE PAGE FIRST LOADS HERE
+	styleToggle();
+	//WE CALL THE FUNCTDION AGAIN WHEN THE PAGE IS RESIZED
+	$(window).resize(styleToggle);
+
+
+});
+
+function styleToggle() {
+
+		if ( $(window).width() < 600 )
 		{
-			alert('more than 500');
+		 $('#navigation.fixed').remove();
+
 		}
-};
+
+		else if (  $(window).width > 600)
+		{
+		 $('#navigation').show();
+
+		}
 
 
-
-
+}
 
 
 
