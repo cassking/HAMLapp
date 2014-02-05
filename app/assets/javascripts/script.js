@@ -644,13 +644,13 @@ $(document).ready(function(){
 //TOUR OF UI JQIUERY EFFECTS
 ////TASK 30 -TEST- TAKE FIRST PARAGRAPH, SHAKE IT,  HIGHLIGHT IT AND EXPLODE IT
 
-$(document).ready(function(){
-	$('p:first').hover(function(){
- 		$(this).effect('shake', {}).effect('highlight', {}).effect('explode', {});
+// $(document).ready(function(){
+// 	$('p:first').hover(function(){
+//  		$(this).effect('shake', {}).effect('highlight', {}).effect('explode', {});
 
-	});
+// 	});
 
-});
+// });
 //TASK 31 SCROLL EVENT, trigger something when scroll happens
 
 $(document).ready(function(){
@@ -839,7 +839,7 @@ $(document).ready(function(){
 
 //WE CALL THE FUNCTION WHEN THE PAGE FIRST LOADS HERE
 	styleToggle();
-	//WE CALL THE FUNCTDION AGAIN WHEN THE PAGE IS RESIZED
+	//WE CALL THE FUNCTION AGAIN WHEN THE PAGE IS RESIZED
 	$(window).resize(styleToggle);
 
 
@@ -847,23 +847,59 @@ $(document).ready(function(){
 
 function styleToggle() {
 
-		if ( $(window).width() < 600 )
-		{
-		 $('#navigation.fixed').remove();
+	if ( $(window).width() < 600 )
+	{
+	 $('#navigation.fixed').remove();
 
-		}
+	}
 
-		else if (  $(window).width > 600)
-		{
-		 $('#navigation').show();
+	else if (  $(window).width > 600)
+	{
+	 $('#navigation').show();
 
-		}
+	}
 
 
 }
+// RESIzABLE  COMPONENTS  on page
+// $(document).ready(function(){
+
+//  $('p:first').resizable();
+
+
+// });
+
+$(document).ready(function(){
+
+ $('textarea').resizable(
+ 	{
+ 		grid: [30, 30],
+ 		minWidth: 150,
+ 		minHeight: 30,
+ 		maxHeight: 220,
+ 		containment: 'parent'
 
 
 
+ 	});
+
+
+});
+
+//SPLITTER PANES
+
+$(document).ready(function(){
+	$('#splitter > div:first').resizable( {},
+		resize function() {
+
+	var firstDivWidth = $('#splitter > div:first').outerWidth(),
+		parentDivWidth = $(firstDivWidth).parent()xxxxx
+		remainderDivWidth = parentDivWidth - firstDivWidth;
+
+}
+);
+
+});
 
 
 

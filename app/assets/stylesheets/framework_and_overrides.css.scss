@@ -1,29 +1,31 @@
 // import the CSS framework
 @import "bootstrap";
 
-// make all images responsive by default
+/*// make all images responsive by default*/
 img {
   @extend .img-responsive;
   margin: 0 auto;
   }
-// override for the 'Home' navigation link
+/*// override for the 'Home' navigation link*/
 .navbar-brand {
   font-size: inherit;
   }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
+/*// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes*/
   $bgcolor: #94C5EB;
   $basetextcolor: #3E3E3E ;
   $linkcolor: #3687AF;
+  $fontsize: 12px;
+  $basewidth: 950px;
 
 body {
   font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
   color: $basetextcolor;
   background: $bgcolor;
-  font-size: 12px;
-  width: 650px;
-  border:1px solid red;
+  font-size: $fontsize;
+  width:  $basewidth;
+
 }
 
 p {
@@ -33,7 +35,36 @@ p {
 a {
   color: $linkcolor;
 }
+ul {  
+   background-color: #ccc;  
+  display: block; 
+  list-style: none; 
+} 
+ol {
+  list-style-type: lower-roman;
+} 
+  
+li {  
+    color: #fff;  
+    display: inline-block;  
+    padding: 5px 10px 0 10px;  
+    margin-right: 2px;  
+    border-right: 1px solid  #f8f8f8
+ 
+}
+h1, h2, h3 {
+  border-bottom:2px solid #015287;
+  color: #D15600;
+  padding-top: 10px;
+  margin-top: 0;
+}
+strong {
+  color:  darkgreen;
+}
+/*//CONTENT, CONTAINER*/
 #content {
+  background-color: #fff;
+  padding: 0 15px 10px 15px;
   height: 2400px;
 }
 #container {
@@ -43,154 +74,12 @@ a {
 }
 
 #header {
+  margin: 0 auto;
+  width:  $basewidth;
   height: 60px;
   color: #172322;
   background: transparent;
 }
-#bio {
-  margin-bottom: 10px;
-}
-
-#bio h3 {
-  margin:0;
-  padding:5px 0 5px 10px;
-  background-color:#94C5EB;
-  border-bottom:1px solid #fff;
-  color: #00314F;
-  font-weight:normal;
-}
-
-#bio div {
-  height:120px;
-  background-color: #F4F4EE;
-  border-bottom:1px solid #fff;
-  position: relative;
-}
-
-#bio img {
-  margin:10px;
-  background-color: #F4F4EE;
-}
-
-#bio p {
-  position: absolute;
-  left: 120px;
-  top: 10px;
-  margin: 0 10px 0 0;
-  padding: 0;
-}
-
-#news_two {
-  height: 100px;
-  width: 300px;
-  border: 1px solid red;
-  overflow: scroll;
-}
-#navigation_blob {
-  top: 0px;
-  left: 120px;
-
-  height: 30px;
-  opacity: 0.70;
-  background-color: #c0ffee;
-  position: absolute;
-  z-index: 1;
-
-}
-#navigation {
-width: 100px;
-float: right;
-position: relative;
-z-index: 5000;
-  
-} 
-#navigation.fixed {
-      position: fixed;
-      left: 50%;
-      margin-left: 160px;
-      top: 0;
-  }
- /* narrow the content to make room for floating nav */
-
-p {
-    width: 400px;
-}
-
-h2 {
-    width: 400px;
-}
-
-#celebs table {
-    width: 400px;
-    margin-left: 0;
-}
-
-#navigation li {
-  height:30px;
-  float:left;
-  list-style-type: none;
-  width:70px;
-  padding:3px;
-  border-right:1px solid #3687AF;
-  background-color: #015287;
-  background-repeat: no-repeat;
-  background-position: center 30px;
-}
-
-#navigation ul {
-  padding: 0;
-  margin: 0;
-}
-
-#navigation li a {
-  color: #FFFFFF;
-}
-
-#navigation li#home {
- background-image: url("http://localhost:3000/assets/home_icon.png");
- z-index: 5000;
-}
-#navigation li#about {
-  background-image: url("http://localhost:3000/assets/home_icon.png");
-}
-#navigation li#buy {
-  background-image: url("http://localhost:3000/assets/home_icon.png");
-}
-#navigation li#gifts {
-  background-image: url("http://localhost:3000/assets/home_icon.png");
-}
-#image {
-  float: left;
-}
-#list {
-  list-style: none;
-}
-.scrolled {
-    background-color: red;
-}
-.info_three {
- background-image: url("http://localhost:3000/assets/home_icon.png");
-
-}
-ul {  
-   background-color: #ccc;  
-  display: block; 
-  list-style: none; 
-}  
-  
-li {  
-    color: white;  
-    display: inline-block;  
-    padding: 5px 10px 0 10px;  
-    margin-right: 2px;  
-    border-right: 1px solid  #f8f8f8
- 
-}
-#content {
-  background-color: #fff;
-  padding: 0 15px 10px 15px;
-
-} 
 
 #footer {
   padding:15px;
@@ -201,7 +90,7 @@ li {
   color: #333;
   text-align: center;  
   border-top:solid 2px #69a; 
-    .footerlinks {
+    &.footerlinks {
       list-style: none;
       margin: 0 auto;
         a {
@@ -212,16 +101,108 @@ li {
   }
 }
 
+/*//BIO*/
+#bio {
+  margin-bottom: 10px;
+  h3 {
+    margin:0;
+    padding:5px 0 5px 10px;
+    background-color:#94C5EB;
+    border-bottom:1px solid #fff;
+    color: #00314F;
+    font-weight:normal;
+  }
 
-h1, h2, h3 {
-  border-bottom:2px solid #015287;
-  color: #D15600;
-  padding-top: 10px;
-  margin-top: 0;
+  div {
+    height:120px;
+    background-color: #F4F4EE;
+    border-bottom:1px solid #fff;
+    position: relative;
+  }
+
+  img {
+    margin:10px;
+    background-color: #F4F4EE;
+  }
+
+  p {
+    position: absolute;
+    left: 120px;
+    top: 10px;
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+
+
+
 }
-strong {
-  color: red;
+
+
+
+/*NAVIGATION*/
+#navigation_blob {
+  top: 0px;
+  left: 120px;
+  height: 30px;
+  opacity: 0.70;
+  background-color: #c0ffee;
+  position: absolute;
+  z-index: 1;
+
 }
+#navigation {
+  width: 100px;
+  float: right;
+  position: relative;
+  z-index: 5000;
+  &.fixed {
+    position: fixed;
+    left: 50%;
+    margin-left: 160px;
+    top: 0;
+  }
+  li {
+    height:30px;
+    float:left;
+    list-style-type: none;
+    width:70px;
+    padding:3px;
+    border-right:1px solid #3687AF;
+    background-color: #015287;
+    background-repeat: no-repeat;
+    background-position: center 30px;
+      a {
+        color: #FFFFFF;
+      }
+
+      &#home {
+        background-image: url("http://localhost:3000/assets/home_icon.png");
+        z-index: 5000;
+      }
+      &#about {
+        background-image: url("http://localhost:3000/assets/home_icon.png");
+      }
+      &#buy {
+        background-image: url("http://localhost:3000/assets/home_icon.png");
+      }
+      &#gifts {
+        background-image: url("http://localhost:3000/assets/home_icon.png");
+      }
+
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+ 
+} 
+
+
+
+
+/*//TABLE*/
 
 table {
   border-collapse:collapse;
@@ -229,22 +210,99 @@ table {
   margin:0 20px 20px 20px;
   border-top:2px solid #015287;
   width:480px;
+  margin-left: 0;
+  th {
+    border-bottom: 2px solid #015287;
+    color: #D15600;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    padding: 3px 8px;
+  }
+  td {
+    padding: 6px;
+  }
+
 }
 
-th {
-  border-bottom: 2px solid #015287;
-  color: #D15600;
-  font-size: 14px;
-  font-weight: normal;
-  text-align: left;
-  padding: 3px 8px;
+// SPLITTER
+
+#splitter { 
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+    ol {
+
+      list-style-type: lower-roman !important ;
+      li {
+        display: block;
+        border: none;
+        
+
+      }
+      ol {
+
+        list-style-type:lower-roman !important ;
+        li {
+          display: block;
+          border: none;
+         
+
+        }
+      }
+    }
+  h2 { 
+    margin-bottom: 0; 
+    padding-bottom: 0;
+  } 
+
+  #tocPane { 
+    overflow: hidden;
+    background: #d6dde5 url("http://localhost:3000/assets/handle.png") no-repeat right center;
+    &.inner { 
+      width: 300px; 
+    } 
+    &.pane {
+      width: 50%;
+      height: 100%;
+      float: left;
+    }
+  }
+
+  #contentPane {
+    overflow: auto;
+    &.inner {
+      padding: 0 5px;
+    }
+    &.pane {
+      width: 50%;
+      height: 100%;
+      float: left;
+    }
+  }
 }
 
-td {
-  padding: 6px;
+
+
+
+/*//ADDITIONAL AS PER BOOK*/
+/*//IMAGE*/
+#image {
+  float: left;
+}
+/*//LIST*/
+#list {
+  list-style: none;
 }
 
-.zebra{
+.scrolled {
+    background-color: red;
+}
+.info_three {
+ background-image: url("http://localhost:3000/assets/home_icon.png");
+
+}
+.zebra {
   background-color: #dddddd;
   color: #666666;
 }
