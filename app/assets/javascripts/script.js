@@ -886,21 +886,31 @@ $(document).ready(function(){
 
 });
 
-//SPLITTER PANES
-
+//SPLITTER PANES, horizontal
+//for vertical simply use height()
+//TRY ON MY OWN FIRST
 $(document).ready(function(){
-	$('#splitter > div:first').resizable( {},
-		resize function() {
 
-	var firstDivWidth = $('#splitter > div:first').outerWidth(),
-		parentDivWidth = $(firstDivWidth).parent()xxxxx
-		remainderDivWidth = parentDivWidth - firstDivWidth;
+	$('#splitter > div:first').resizable();
+	$('#tocPane').resize(function(){
+		// what is width of parent?
+		//subtract width of div first from parent
+		//calculate remaining space for div second
+		var parentWidth = $(this).parent().width(),//620
+		//subtract div one from parent, get remainder is div two
+		widthDivTwo =  parentWidth - $(this).outerWidth(),//varies depending on resize
+		remainderWidth =  parentWidth   -  (parentWidth  - widthDivTwo),
+		remainderPx = remainderWidth + 'px';
+		$('#contentPane').css( {width :  remainderPx });
 
-}
-);
+ 		console.log(remainderWidth);
+
+	});
+
+// ACCOMPLISHED! NOT PRETTY BUT IT WORKS!
+
 
 });
-
 
 
 
