@@ -890,7 +890,6 @@ $(document).ready(function(){
 //for vertical simply use height()
 //TRY ON MY OWN FIRST
 $(document).ready(function(){
-
 	$('#splitter > div:first').resizable();
 	$('#tocPane').resize(function(){
 		// what is width of parent?
@@ -902,15 +901,38 @@ $(document).ready(function(){
 		remainderWidth =  parentWidth   -  (parentWidth  - widthDivTwo),
 		remainderPx = remainderWidth + 'px';
 		$('#contentPane').css( {width :  remainderPx });
-
  		console.log(remainderWidth);
+	});
+// ACCOMPLISHED! NOT PRETTY BUT IT WORKS!
+
+});
+
+//CREATE A LIGHTBOX EFFECT THAT DIMS ENTIRE SCREEN WHILE DISPLAYING IMAGE
+// FIRST ATTEMPT ON MY OWN, BOOK CODE DIFFERS SLIGHTLY
+$(document).ready(function(){
+
+$('a.lightbox').click(function(){
+	$('<div id="overlay"></div>').appendTo('#container');
+	$('<div id="lightbox"></div>').appendTo('#overlay');
+	var img = $('<img class="gallery"/>').attr('src', $(this).attr('href'));
+	$(img).appendTo('#lightbox');
+
+console.log(img);
+
+	$('#overlay').click(function(){
+
+ 		$(this).hide();
 
 	});
-
-// ACCOMPLISHED! NOT PRETTY BUT IT WORKS!
+	return false;//disables default action of the link
+});
 
 
 });
+
+
+
+
 
 
 

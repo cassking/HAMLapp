@@ -283,6 +283,29 @@ table {
 }
 
 
+//OVERLAY, LIGHTBOX, STYLES
+
+#overlay {//holds loader gif
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5) url("http://localhost:3000/assets/loader.gif") no-repeat scroll center center;
+
+}
+
+#lightbox {//holds image
+  position: relative;
+  margin: 0 auto;
+ 
+    img.gallery {
+      position: relative;
+      top: 120px;
+      left: 30px;
+      
+    }
+}
 
 
 /*//ADDITIONAL AS PER BOOK*/
