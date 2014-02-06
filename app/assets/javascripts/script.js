@@ -909,19 +909,20 @@ $(document).ready(function(){
 
 //CREATE A LIGHTBOX EFFECT THAT DIMS ENTIRE SCREEN WHILE DISPLAYING IMAGE
 // FIRST ATTEMPT ON MY OWN, BOOK CODE DIFFERS SLIGHTLY
+//only thing i missed, load() As soon as the image has been loaded, the handler is called.
 $(document).ready(function(){
 
 $('a.lightbox').click(function(){
 	$('<div id="overlay"></div>').appendTo('#container');
 	$('<div id="lightbox"></div>').appendTo('#overlay');
 	var img = $('<img class="gallery"/>').attr('src', $(this).attr('href'));
-	$(img).appendTo('#lightbox');
+	$(img).fadeIn('slow').appendTo('#lightbox');
 
 console.log(img);
 
 	$('#overlay').click(function(){
 
- 		$(this).hide();
+ 		$(this).fadeOut('slow');
 
 	});
 	return false;//disables default action of the link
@@ -929,6 +930,8 @@ console.log(img);
 
 
 });
+//USE OF THE JQUERY PLUGIN IN COLORBOX
+
 
 
 
