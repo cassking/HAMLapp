@@ -735,7 +735,7 @@ $(document).ready(function(){
 	});
 });
 
-//SCROLLING THE DOCUMENT USING ANCHOR TAGS
+//33 SCROLLING THE DOCUMENT USING ANCHOR TAGS
 // reading specs i did it this way....
 
 $(document).ready(function(){
@@ -753,7 +753,7 @@ $(document).ready(function(){
 });
 
 
-//SCROLLING THE DOCUMENT USING ANCHOR TAGS
+//34 SCROLLING THE DOCUMENT USING ANCHOR TAGS
 // following book it is done thusly... using the ScrollTo plugin
 
 $(document).ready(function(){
@@ -771,12 +771,12 @@ $(document).ready(function(){
 
 });
 
-//use of ScrollPane plugin
+//35 use of ScrollPane plugin
 $(document).ready(function(){
  $('#news_two').jScrollPane ({ verticalGutter: 20   }   );
 
 });
-//GATHERING INFO ABOUT USER INITIATED WINDOW RESIZING
+//36 GATHERING INFO ABOUT USER INITIATED WINDOW RESIZING
 
 
 
@@ -790,7 +790,7 @@ $(document).ready(function(){
 
 });
 
-// CREATING A CSS STYLE SWITCHER THAT APPENDS THE wide.css FILE TO THE HEAD OF DOCUMENT
+// 37 CREATING A CSS STYLE SWITCHER THAT APPENDS THE wide.css FILE TO THE HEAD OF DOCUMENT
 
 //CREATE A FUNCTION TO create and event upon RESIZE event trigger
 //my solo attempt
@@ -834,7 +834,7 @@ $(document).ready(function(){
 // 			$('.foo').remove();
 // 			}
 // }
-//LETS TRY  THIS AGAIN ON MY OWN
+//38 LETS TRY  THIS AGAIN ON MY OWN
 $(document).ready(function(){
 
 //WE CALL THE FUNCTION WHEN THE PAGE FIRST LOADS HERE
@@ -861,7 +861,7 @@ function styleToggle() {
 
 
 }
-// RESIzABLE  COMPONENTS  on page
+// 39 RESIzABLE  COMPONENTS  on page
 // $(document).ready(function(){
 
 //  $('p:first').resizable();
@@ -886,7 +886,7 @@ $(document).ready(function(){
 
 });
 
-//SPLITTER PANES, horizontal
+//40 SPLITTER PANES, horizontal
 //for vertical simply use height()
 //TRY ON MY OWN FIRST
 $(document).ready(function(){
@@ -907,7 +907,7 @@ $(document).ready(function(){
 
 });
 
-//CREATE A LIGHTBOX EFFECT THAT DIMS ENTIRE SCREEN WHILE DISPLAYING IMAGE
+//41 CREATE A LIGHTBOX EFFECT THAT DIMS ENTIRE SCREEN WHILE DISPLAYING IMAGE
 // FIRST ATTEMPT ON MY OWN, BOOK CODE DIFFERS SLIGHTLY
 //only thing i missed, load() As soon as the image has been loaded, the handler is called.
 $(document).ready(function(){
@@ -930,13 +930,60 @@ console.log(img);
 
 
 });
-//USE OF THE JQUERY PLUGIN IN COLORBOX
+//42 BEGIN USING THE SHORTCUT FOR $(document).ready(function(){...});
+//There’s a quicker way of accessing the same functionality:
+//$(function(){...});
 
+//CONTINUE WITH BOOK HERE
+//43 USE OF THE JQUERY PLUGIN IN COLORBOX
+//use of rel attribute selector
+// $(document).ready(function(){
+// //calling the colorbox method and grouping images by using attribute selector
+// // add rel="celeb" to html
+//  $('a.lightbox').colorbox({
 
+//  transition: 'fade',
+//  speed: 500,
+//  current: "{current} of {total} photos"
+//  });
+// });
 
+//
+//FADER EFFECT FOR IMAGES tied to Hover function
+//this can be done with css but this is Jquery way
 
+$(function(){
+	 $('#fader img:nth-child(2)').addClass('to');
 
+		 $('#fader').hover(function(){
 
+		 	$(this).find('img:eq(1)').stop(true,true).fadeIn();
+		 },
+		 function(){
+
+		 	$(this).find('img:eq(1)').fadeOut();
+
+		 });
+	 });
+
+// 44 JAVASCRIPT TIMERS
+//setTimeout will wait the specified period of time, run the code we give it, and then stop
+ //setInterval, on the other hand, will wait, run the code—then wait again and run the code again
+
+$(function(){
+	  // move the green box with setInterval
+	$('<div class="green"> green box</div>').prependTo('#news');
+	$('<div class="red"> red box</div>').prependTo('#news');
+	 var $green = $('#green');
+    greenLeft = $green.offset().left;
+  setInterval(function() {
+    $green.css('left', ++greenLeft);
+  }, 200);
+  // move the red box with setTimeout
+
+});
+
+ 
 
 
 

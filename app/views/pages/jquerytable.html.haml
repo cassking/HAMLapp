@@ -83,7 +83,12 @@
 				(.info_two triggering event with hover)LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.  LOTS OF MORE INFORMATION HERE.
 			%p.info_three
 				(.info_three, mouseover/mouseout tied to hover)LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.LOTS OF MORE INFORMATION HERE.  LOTS OF MORE INFORMATION HERE.
-	
+			
+			%span#fader
+				%img{:src=>"http://localhost:3000/assets/mg-placeholder-100x100.png"}
+				%img{:src=>"http://localhost:3000/assets/placeholder-100x100.png"}
+					    
+     
 		%table.data#celebs
 			%thead
 				%tr
@@ -99,21 +104,21 @@
 				%tbody
 					%tr
 						%td 203A
-						%td Johny Stardust (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.png">Image PNG</a>, <a href="bio.pdf">bio</a>)
+						%td Johny Stardust (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.png" rel="celeb">Image PNG</a>, <a href="bio.pdf">bio</a>)
 						%td Front-man
 						%td Los Angeles
 						%td $39.95
 			
 					%tr
 						%td 141B
-						%td Beau Dandy (<a class="lightbox" href="http://localhost:3000/assets/avatar_placeholder_400x400.jpg">Image AVATAR</a>,<a href="bio.pdf">bio</a>)
+						%td Beau Dandy (<a class="lightbox" href="http://localhost:3000/assets/avatar_placeholder_400x400.jpg" rel="celeb">Image AVATAR</a>,<a href="bio.pdf">bio</a>)
 						%td Singer
 						%td New York
 						%td $39.95
 					
 					%tr
 						%td.colemail 2031 
-						%td Mo' Fat (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.jpg">Image JPG</a>pic</a>)
+						%td Mo' Fat (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.jpg" rel="celeb">Image JPG</a>pic</a>)
 						%td Producer
 						%td New York
 						%td $19.95
@@ -127,7 +132,7 @@
 					
 					%tr
 						%td 8A05
-						%td Darth Fader (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.png">Image PNG</a>)
+						%td Darth Fader (<a class="lightbox" href="http://localhost:3000/assets/placeholder-400x400.png" rel="celeb">Image PNG</a>)
 						%td DJ
 						%td London
 						%td $19.95
