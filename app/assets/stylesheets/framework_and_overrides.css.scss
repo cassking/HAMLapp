@@ -328,10 +328,21 @@ table {
 }
 
 /*TIMER FUNCTIONS BOXES*/
-.green, .red{
+.box{
+ position: absolute;
   width: 100px;
   height: 100px;
   border: 1px solid black;
+}
+.red {
+ top: 60px;
+  border-color: red;
+   background-color: red;
+}
+.green {
+top: 120px;
+  border-color: green;
+   background-color: green;
 }
 /*//ADDITIONAL AS PER BOOK*/
 /*//IMAGE*/

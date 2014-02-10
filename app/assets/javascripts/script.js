@@ -971,15 +971,26 @@ $(function(){
  //setInterval, on the other hand, will wait, run the code—then wait again and run the code again
 
 $(function(){
+	// create the boxes first prepent to news
 	  // move the green box with setInterval
-	$('<div class="green"> green box</div>').prependTo('#news');
-	$('<div class="red"> red box</div>').prependTo('#news');
-	 var $green = $('#green');
+	$('<div class="green box"> green box </div>').prependTo('#news');
+	$('<div class="red box"> red box</div>').prependTo('#news');
+	
+    // move the green box with setInterval
+  var $green = $('.green');
     greenLeft = $green.offset().left;
   setInterval(function() {
     $green.css('left', ++greenLeft);
   }, 200);
+
+    
   // move the red box with setTimeout
+  var $red = $('.red'),
+    redLeft = $('.red').offset().left;
+  function moveRed() {
+    $red.css('left', ++redLeft);
+    setTimeout(moveRed, 200);
+  }
 
 });
 
