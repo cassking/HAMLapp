@@ -977,25 +977,51 @@ $(function(){
 	$('<div class="red box"> red box</div>').prependTo('#news');
 	
     // move the green box with setInterval
-  var $green = $('.green');
-    greenLeft = $green.offset().left;
+  var $green = $('.green'),
+    greenLeft = $green.offset().top;
   setInterval(function() {
-    $green.css('left', ++greenLeft);
-  }, 200);
+    $green.css('top', ++greenLeft);
+  }, 20);
 
     
   // move the red box with setTimeout
-  var $red = $('.red'),
-    redLeft = $('.red').offset().left;
-  function moveRed() {
-    $red.css('left', ++redLeft);
-    setTimeout(moveRed, 200);
-  }
+  // uncertain as to why this is not working
+  // var $red = $('.red'),
+  //   redLeft = $('.red').offset().left;
+  // function moveRed() {
+  //   $red.css('left', ++redLeft);
+  //   setInterval(moveRed, 10);
+  // }
+
 
 });
 
  
+//45 IMPLEMENTING SLIDESHOW FADE
+//SYNTAX a ? b : c means that if a is true, return b; otherwise, return c. 
+$(function(){
+//look at http://www.khanzek.htpwebdesign.ca/jquery/project/tut_slideshow.html
+	function slideShow() {
 
+		//store current image
+		 var current = $('#photos img.show');
+
+		//store next image
+		if (current.next().length == 1){
+			var next = current.next();
+		} 
+		 
+
+	 else {
+		 var next = current.siblings().first();
+		 }
+		 // Hide Current Image
+		 current.hide().removeClass('show');
+		 // Fade in Next Image
+		 next.fadeIn().addClass('show');
+	}; 
+
+});
 
 
 

@@ -328,22 +328,32 @@ table {
 }
 
 /*TIMER FUNCTIONS BOXES*/
-.box{
- position: absolute;
+.box {
+  position: absolute;
   width: 100px;
   height: 100px;
   border: 1px solid black;
+    &.red {
+      top: 130px;
+      border-color: red;
+      background-color: red;
+    }
+  &.green {
+    top: 120px;
+    border-color: green;
+    background-color: green;
+  }
 }
-.red {
- top: 60px;
-  border-color: red;
-   background-color: red;
+/* FADING SLIDESHOW*/
+
+#photos img {
+  display: none;
+  &.show {
+    display: inline;
+  }
 }
-.green {
-top: 120px;
-  border-color: green;
-   background-color: green;
-}
+
+#photos 
 /*//ADDITIONAL AS PER BOOK*/
 /*//IMAGE*/
 #image {
@@ -355,7 +365,7 @@ top: 120px;
 }
 
 .scrolled {
-    background-color: red;
+  background-color: red;
 }
 .info_three {
  background-image: url("http://localhost:3000/assets/home_icon.png");
