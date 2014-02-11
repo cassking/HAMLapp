@@ -1000,6 +1000,7 @@ $(function(){
 //45 IMPLEMENTING SLIDESHOW FADE
 //SYNTAX a ? b : c means that if a is true, return b; otherwise, return c. 
 $(function(){
+	slideShow();
 //look at http://www.khanzek.htpwebdesign.ca/jquery/project/tut_slideshow.html
 	function slideShow() {
 
@@ -1007,13 +1008,13 @@ $(function(){
 		 var current = $('#photos img.show');
 
 		//store next image
-		if (current.next().length == 1){
-			var next = current.next();
+		if (current.next().length = 1){
+			var nextimg = current.next();
 		} 
 		 
 
 	 else {
-		 var next = current.siblings().first();
+		 var nextimg = current.siblings().first();
 		 }
 		 // Hide Current Image
 		 current.hide().removeClass('show');
