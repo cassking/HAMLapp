@@ -1,8 +1,8 @@
 //comment here
 // TASK 1
 //Testing a selection to be sure it exists on page
-$(document).ready(function(){
-	console.log($('#celebs tr').length + 'elements!');	
+$(document).ready(function() {
+console.log($('#celebs tr').length + 'elements!');
 });
 
 $(document).ready(function(){
@@ -999,30 +999,72 @@ $(function(){
  
 //45 IMPLEMENTING SLIDESHOW FADE
 //SYNTAX a ? b : c means that if a is true, return b; otherwise, return c. 
-$(function(){
-	slideShow();
-//look at http://www.khanzek.htpwebdesign.ca/jquery/project/tut_slideshow.html
-	function slideShow() {
+// $(function(){
+// 	//slideShow();
+// //look at http://www.khanzek.htpwebdesign.ca/jquery/project/tut_slideshow.html
+// 	function slideShow() {
 
-		//store current image
-		 var current = $('#photos img.show');
+// 		//store current image
+// 		 var current = $('#photos img.show');
 
-		//store next image
-		if (current.next().length = 1){
-			var nextimg = current.next();
-		} 
+// 		//store next image
+// 		if (current.next().length = 1){
+// 			var nextimg = current.next();
+// 		} 
 		 
 
-	 else {
-		 var nextimg = current.siblings().first();
-		 }
-		 // Hide Current Image
-		 current.hide().removeClass('show');
-		 // Fade in Next Image
-		 next.fadeIn().addClass('show');
-	}; 
+// 	 else {
+// 		 var nextimg = current.siblings().first();
+// 		 }
+// 		 // Hide Current Image
+// 		 current.hide().removeClass('show');
+// 		 // Fade in Next Image
+// 		 nextimgß.fadeIn().addClass('show');
+// 	}; 
 
+// });
+
+//REVIEW
+
+$(function(){
+	slideShow();
 });
+	function slideShow() {
+		//store current image
+		var currentimg = $('#photos img.show');
+	//var countimg = currentimg.length; this just for testing length
+	//alert(countimg);//returns 1 
+	//but, if it returns 0 begin at first image and add class .show
+
+			if( currentimg.next().length() == 1 ) {
+				var nextimg = currentimg.next();
+
+			}
+			else {
+				var nextimg = currentimg.siblings().first();
+	
+			}
+
+			currentimg.hide().removeClass('show');
+			nextimg.fadeIn().addClass('show');
+		
+	setTimeout(slideShow, 9000);	
+	};
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
