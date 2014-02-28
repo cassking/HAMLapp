@@ -309,7 +309,7 @@ table {
 /*/FADER STYLES TO USE ROLLOVER FADE */
 
 
-#fader {
+#fader, #fader2 {
   width: 100px;
   height: 100px;
   margin: 10px;
@@ -318,6 +318,9 @@ table {
   position: relative;
    img {
     position: absolute;
+      &.show {
+        display: inline;
+      }
    }
   .to {
     display: none;
@@ -325,6 +328,10 @@ table {
     left: 0;
     
   }
+}
+#fader2 {
+  border: 3px solid red;
+
 }
 
 /*TIMER FUNCTIONS BOXES*/
@@ -335,6 +342,7 @@ table {
   border: 1px solid black;
     &.red {
       top: 130px;
+      
       border-color: red;
       background-color: red;
     }

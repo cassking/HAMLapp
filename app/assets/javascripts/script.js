@@ -975,83 +975,73 @@ $(function(){
 	  // move the green box with setInterval
 	$('<div class="green box"> green box </div>').prependTo('#news');
 	$('<div class="red box"> red box</div>').prependTo('#news');
-	
     // move the green box with setInterval
   var $green = $('.green'),
-    greenLeft = $green.offset().top;
+    greenDown= $green.offset().top;
   setInterval(function() {
-    $green.css('top', ++greenLeft);
-  }, 20);
+    $green.css('top', ++greenDown);
+  }, 800);
 
-    
-  // move the red box with setTimeout
-  // uncertain as to why this is not working
-  // var $red = $('.red'),
-  //   redLeft = $('.red').offset().left;
-  // function moveRed() {
-  //   $red.css('left', ++redLeft);
-  //   setInterval(moveRed, 10);
-  // }
-
+//setTimeout is like a countdown timer
+//executes at end of given time, here the box will disappear after 5 seconds
+  var $red = $('.red'),
+ //  setTimeout(function() {
+	// // 	$red.fadeOut();
+	// // }, 5000);
+ //  });
+	redLeft = $red.offset().left;
+		setInterval(function(){
+		$red.css('left', ++redLeft);
+	}, 500);
 
 });
 
  
 //45 IMPLEMENTING SLIDESHOW FADE
-//SYNTAX a ? b : c means that if a is true, return b; otherwise, return c. 
-// $(function(){
-// 	//slideShow();
-// //look at http://www.khanzek.htpwebdesign.ca/jquery/project/tut_slideshow.html
-// 	function slideShow() {
 
-// 		//store current image
-// 		 var current = $('#photos img.show');
-
-// 		//store next image
-// 		if (current.next().length = 1){
-// 			var nextimg = current.next();
-// 		} 
-		 
-
-// 	 else {
-// 		 var nextimg = current.siblings().first();
-// 		 }
-// 		 // Hide Current Image
-// 		 current.hide().removeClass('show');
-// 		 // Fade in Next Image
-// 		 nextimgß.fadeIn().addClass('show');
-// 	}; 
-
-// });
 
 //REVIEW
 
-$(function(){
-	slideShow();
-});
-	function slideShow() {
-		//store current image
-		var currentimg = $('#photos img.show');
-	//var countimg = currentimg.length; this just for testing length
-	//alert(countimg);//returns 1 
-	//but, if it returns 0 begin at first image and add class .show
+// $(function(){
+// 	slideShow();
 
-			if( currentimg.next().length() == 1 ) {
-				var nextimg = currentimg.next();
+// 	function slideShow() {
+// 		//store current image
+// 		var currentimg = $('#photos img.show');
+// 	//var countimg = currentimg.length; this just for testing length
+// 	//alert(countimg);//returns 1 
+// 	//but, if it returns 0 begin at first image and add class .show
 
-			}
-			else {
-				var nextimg = currentimg.siblings().first();
+// 			if(currentimg.next().length() == 1 ) {
+				 
+
+// 			}
+// 			else {
+				 
 	
-			}
+// 			}
 
-			currentimg.hide().removeClass('show');
-			nextimg.fadeIn().addClass('show');
+// 			currentimg.hide().removeClass('show');
+// 			nextimg.fadeIn().addClass('show');
 		
-	setTimeout(slideShow, 9000);	
-	};
+// 	setTimeout(slideShow, 9000);	
+// 	};
+// });
+//PRACTICE FILE FEBRUARY 26
 
-	
+$(function(){
+
+var fader2 = $('#fader2 > img');
+
+ fader2.hover(function(){
+
+ 	$(this).first('img').fadeOut();
+ 	$(this).first('img').addClass('show').fadeIn();
+
+
+ })
+
+});
 
 
 
