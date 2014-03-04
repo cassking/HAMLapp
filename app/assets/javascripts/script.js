@@ -970,32 +970,56 @@ $(function(){
 //setTimeout will wait the specified period of time, run the code we give it, and then stop
  //setInterval, on the other hand, will wait, run the code—then wait again and run the code again
 
+						// $(function(){
+						// 	// create the boxes first prepent to news
+						// 	  // move the green box with setInterval
+						// 	$('<div class="green box"> green box </div>').prependTo('#news');
+						// 	$('<div class="red box"> red box</div>').prependTo('#news');
+						//     // move the green box with setInterval
+						//   var $green = $('.green'),
+						//     greenDown= $green.offset().top;
+						//   setInterval(function() {
+						//     $green.css('top', ++greenDown);
+						//   }, 800);
+
+						// //setTimeout is like a countdown timer
+						// //executes at end of given time, here the box will disappear after 5 seconds
+						//   var $red = $('.red'),
+						//  //  setTimeout(function() {
+						// 	// // 	$red.fadeOut();
+						// 	// // }, 5000);
+						//  //  });
+						// 	redLeft = $red.offset().left;
+						// 		setInterval(function(){
+						// 		$red.css('left', ++redLeft);
+						// 	}, 500);
+
+						// });
+//46 STOPPING TIMERS:  pass the ID of the timer by storing it im a variable
+//using a duplicate of the function above and adding the STOP TIMER
+
 $(function(){
-	// create the boxes first prepent to news
-	  // move the green box with setInterval
-	$('<div class="green box"> green box </div>').prependTo('#news');
-	$('<div class="red box"> red box</div>').prependTo('#news');
-    // move the green box with setInterval
-  var $green = $('.green'),
-    greenDown= $green.offset().top;
-  setInterval(function() {
-    $green.css('top', ++greenDown);
-  }, 800);
 
-//setTimeout is like a countdown timer
-//executes at end of given time, here the box will disappear after 5 seconds
-  var $red = $('.red'),
- //  setTimeout(function() {
-	// // 	$red.fadeOut();
-	// // }, 5000);
- //  });
-	redLeft = $red.offset().left;
-		setInterval(function(){
-		$red.css('left', ++redLeft);
-	}, 500);
+	$(function(){
+	//create boxes and prepend boxes to #news
+	$('<div class="pink box">pink box</div>').prependTo('#news');
+	$('<div class="purple box">purple box</div>').prependTo('#news');
 
+		//create variables to target each box
+		//and each box offset
+		$pink = $('.pink'),
+			pinkDown = $pink.offset().top;
+
+		$purple = $('.purple'),
+			purpleLeft = $purple.offset().left;
+	
+//alert(purpleLeft + " ," + pinkDown);
+//this outputs 120, 160
+
+		setInterval(function(){ $pink.css('top', ++pinkDown); }, 400);
+		setInterval(function(){ $purple.css('left', ++purpleLeft); }, 400);
+		});
 });
-
  
 //45 IMPLEMENTING SLIDESHOW FADE
 
@@ -1029,19 +1053,19 @@ $(function(){
 // });
 //PRACTICE FILE FEBRUARY 26
 
-$(function(){
+// $(function(){
 
-var fader2 = $('#fader2 > img');
+// var fader2 = $('#fader2 > img');
 
- fader2.hover(function(){
+//  fader2.hover(function(){
 
- 	$(this).first('img').fadeOut();
- 	$(this).first('img').addClass('show').fadeIn();
+//  	$(this).first('img').fadeOut();
+//  	$(this).first('img').addClass('show').fadeIn();
 
 
- })
+//  })
 
-});
+// });
 
 
 
